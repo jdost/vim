@@ -86,7 +86,7 @@ update_ubuntu() {
 } # }}}
 ####################################################################################
 
-if [[ -z "${1}" ]]; then
+if [ -z "${1}" ]; then
    echo "Missing action. Syntax: ${0} [command]"
    echo "  Options:"
    echo "    init    -- installs associated programs and creates all symlinks"
@@ -97,13 +97,13 @@ if [[ -z "${1}" ]]; then
 fi
 case "${1}" in
    'init')
-      [[ ${which pacman} =~ "/bin" ]] && build_arch
-      [[ ${which apt-get} =~ "/bin" ]] && build_ubuntu
+      type pacman > /dev/null  && build_arch
+      type apt-get > /dev/null && build_ubuntu
       link
       ;;
    'update')
-      [[ ${which pacman} =~ "/bin" ]] && update_arch
-      [[ ${which apt-get} =~ "/bin" ]] && update_ubuntu
+      type pacman > /dev/null  && update_arch
+      type apt-get > /dev/null && update_ubuntu
       link
       ;;
    'link')
