@@ -1,0 +1,17 @@
+set ignorecase
+set smartcase
+set gdefault
+
+set showmatch
+set incsearch
+" only set highlighting in colored terminals
+if &t_Co > 2
+   set hlsearch
+endif
+
+nnoremap / /\v
+vnoremap / /\v
+
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %

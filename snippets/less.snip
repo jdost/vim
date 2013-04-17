@@ -1,0 +1,8 @@
+snippet     clear
+abbr        ::after { clear }
+options     indent
+   &:after {
+      display: table;
+      clear: both;
+      content: "";
+   }

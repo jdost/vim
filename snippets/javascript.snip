@@ -1,0 +1,38 @@
+# Function/Closure snippets
+snippet     closure
+abbr        (func(){ ... }());
+   (function () {
+      ${0}
+   }());
+snippet     closlib
+abbr        (func(lib){ ... }(export));
+   (function (exports) {
+      ${0}
+   }(${1:#:namespace} = {}));
+snippet     function
+abbr        function (...) { ... };
+options     indent
+   function (${1:#:args}) {
+      ${0}
+   };
+
+snippet     forlen
+abbr        for (i, l; i<l; i++) { ... }
+options     indent
+   for (var i = 0, l = ${1:#:iter}.length; i < l; i++) {
+      ${0}
+   }
+
+# Underscore snippets
+snippet     each
+abbr        _.each(...);
+options     indent
+   _.each(${1:#:iter}, function (${2:#:alias}) {
+      ${0}
+   });
+snippet     map
+abbr        _.map(...);
+options     indent
+   _.map(${1:#:iter}, function (${2:#:alias}) {
+      ${0}
+   });

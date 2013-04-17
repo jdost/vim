@@ -1,0 +1,34 @@
+# Import snippets
+snippet     imp
+abbr        import ...
+alias       import
+options     head
+   import ${1:#:module}
+   ${0}
+snippet     fromimp
+abbr        from ... import ...
+options     head
+   from ${1:#:module} import ${2:#:subset}
+   ${0}
+snippet     impas
+abbr        import ... as ...
+options     head
+   import ${1:#:module} as ${2:#:alias}
+   ${0}
+snippet     fromimpas
+abbr        from ... import ... as ...
+options     head
+   from ${1:#:module} import ${2:#:subset} as ${3:#:alias}
+   ${0}
+
+# Hashbang snippet(s)
+snippet     #!
+abbr        #!/u/b/e python
+   #!/usr/bin/env python
+
+# unittest snippet(s)
+snippet     test
+   def test_${1:name} (self):
+      ''' ${2:description}
+      '''
+      ${0}
