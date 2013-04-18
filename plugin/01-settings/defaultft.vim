@@ -24,7 +24,7 @@ set autoindent
 set smartindent
 set nowrap
 
-set formatoptions=cnj
+set formatoptions=cn
 
 " Filetype setup
 au BufNewFile,BufRead *.md set filetype=markdown

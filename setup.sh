@@ -35,7 +35,7 @@ echoIfNot() {
 
 link() {
    linkIfNot environment $HOME/.local/environment/vim
-   linkIfNot "" $PWD/temp
+   linkIfNot "" $XDG_CONFIG_HOME/vim
 } # }}}
 ####################################################################################
 # Install - Arch {{{
@@ -56,7 +56,9 @@ run_pacman() {
 
 build_arch() {
    run_pacman
+   touch plugin/local.vim
    git submodule init
+   git submodule update
 }
 
 update_arch() {
@@ -76,7 +78,9 @@ run_apt() {
 
 build_ubuntu() {
    run_apt
+   touch plugin/local.vim
    git submodule init
+   git submodule update
 }
 
 update_ubuntu() {
