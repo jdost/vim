@@ -1,0 +1,29 @@
+# Doctype snippets
+snippet     doctype4
+abbr        DOCTYPE HTML - 4.0
+alias       <!DOCTYPE4
+options     head
+   <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/RT/html4/loose.dtd">
+   ${0}
+
+snippet     doctype5
+abbr        DOCTYPE html (5)
+alias       <!DOCTYPE5
+options     head
+   <!DOCTYPE html>
+   ${0}
+
+# Header "imports" (CSS, JS, etc)
+snippet     scriptjs
+abbr        script src=...
+alias       <script
+options     head
+   <script type="text/javascript" src=${1:#:url} charset="utf-8""></script>
+   ${0}
+
+snippet     linkcss
+abbr        link href=...
+alias       <link
+options     head
+   <link rel="stylesheet" href="${1:#:url}" type="text/css" />
+   ${0}
