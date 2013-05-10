@@ -1,3 +1,5 @@
+let g:TrimOnSave = 1
+
 function TrimWhiteSpace()
    " Save position and searches
    let _s=@/
@@ -10,5 +12,11 @@ function TrimWhiteSpace()
    call cursor(l, c)
 endfunction
 
-autocmd BufWritePre * :call TrimWhiteSpace()
+function AutoTrim()
+   if g:TrimOnSave
+      call TrimWhiteSpace()
+   endif
+endfunction
+
+autocmd BufWritePre * :call AutoTrim()
 nnoremap <leader>W :call TrimWhiteSpace()<cr>
