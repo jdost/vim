@@ -52,3 +52,6 @@
 [submodule "bundle/gitgutter"]
 	path = bundle/gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/puppet-syntax"]
+	path = bundle/puppet-syntax
+	url = git://github.com/puppetlabs/puppet-syntax-vim.git
