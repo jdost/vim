@@ -3,6 +3,9 @@ if &t_Co >= 256
    "colorscheme molokai
    colorscheme badwolf
    syntax on
+
+   hi Normal ctermbg=none
+   hi Nontext ctermbg=none
 endif
 
 set cursorline

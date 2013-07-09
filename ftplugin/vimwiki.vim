@@ -8,4 +8,4 @@ endif
 let g:neocomplcache_disabled_sources_list.vimwiki =
    \ ['dictionary_complete', 'member_complete']
 
-set spell
+setlocal spell

@@ -40,13 +40,15 @@ link() {
 ####################################################################################
 # Install - Arch {{{
 aurGet() {
+   local END_DIR=$PWD
    cd $HOME/.aur/
    ABBR=${1:0:2}
    wget http://aur.archlinux.org/packages/$ABBR/$1/$1.tar.gz
    tar -xf "$1.tar.gz"
    rm "$1.tar.gz"
    cd "$1"
-   makepkg
+   makepkg -si
+   cd $END_DIR
 }
 
 run_pacman() {
@@ -101,13 +103,13 @@ if [ -z "${1}" ]; then
 fi
 case "${1}" in
    'init')
-      type pacman > /dev/null  && build_arch
-      type apt-get > /dev/null && build_ubuntu
+      type pacman %1> /dev/null  && build_arch
+      type apt-get %1> /dev/null && build_ubuntu
       link
       ;;
    'update')
-      type pacman > /dev/null  && update_arch
-      type apt-get > /dev/null && update_ubuntu
+      type pacman %1> /dev/null  && update_arch
+      type apt-get %1> /dev/null && update_ubuntu
       link
       ;;
    'link')

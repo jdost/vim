@@ -11,4 +11,4 @@ let g:neocomplcache_disabled_sources_list.markdown =
    \ ['buffer_complete', 'member_complete']
 
 " spell check
-set spell
+setlocal spell
