@@ -9,15 +9,7 @@ map <F3> :tabprevious<cr>
 imap <F4> <Esc>:tabnext<cr>
 imap <F3> <Esc>:tabprevious<cr>
 
-" split controls
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-L> <C-W>l
-map <C-H> <C-W>h
-imap <C-J> <Esc><C-W>j
-imap <C-K> <Esc><C-W>k
-imap <C-L> <Esc><C-W>l
-imap <C-H> <Esc><C-W>h
+" split controls are now in the vim-tmux plugin
 
 " esc remap
 imap jj <Esc>
@@ -38,3 +30,6 @@ vnoremap < <gv
 nnoremap ; :
 " Y yanks from cursor to end of line (like D)
 map Y y$
+
+" :w!! writes the current buffer as root
+cmap w!! w !sudo tee > /dev/null %

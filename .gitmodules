@@ -55,3 +55,6 @@
 [submodule "bundle/lightline"]
 	path = bundle/lightline
 	url = git://github.com/itchyny/lightline.vim.git
+[submodule "bundle/vim-tmux-navigator"]
+	path = bundle/vim-tmux-navigator
+	url = git://github.com/itchyny/lightline.vim.git
