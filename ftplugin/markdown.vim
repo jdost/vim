@@ -1,6 +1,8 @@
 setlocal wrap
 setlocal shiftwidth=4
 setlocal tabstop=4
+setlocal nolist
+setlocal linebreak
 
 let g:TrimOnSave = 0
 "let g:neocomplcache_enable_at_startup = 0
