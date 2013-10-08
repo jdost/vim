@@ -103,13 +103,13 @@ if [ -z "${1}" ]; then
 fi
 case "${1}" in
    'init')
-      type pacman %1> /dev/null  && build_arch
-      type apt-get %1> /dev/null && build_ubuntu
+      command -v pacman >/dev/null 2>&1  && build_arch
+      command -v apt-get >/dev/null 2>&1 && build_ubuntu
       link
       ;;
    'update')
-      type pacman %1> /dev/null  && update_arch
-      type apt-get %1> /dev/null && update_ubuntu
+      command -v pacman >/dev/null 2>&1  && update_arch
+      command -v apt-get >/dev/null 2>&1 && update_ubuntu
       link
       ;;
    'link')
