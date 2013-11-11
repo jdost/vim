@@ -13,7 +13,9 @@ if $TERM =~ "-256color"
    set t_Co=256
 endif " }}}
 " pathogen plugin, sets up bundles
+runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
+
 filetype plugin indent on
 " clear autocmds, handles on reloading this {{{
 if has ("autocmd")
