@@ -61,3 +61,12 @@
 [submodule "bundle/pathogen"]
 	path = bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "bundle/json.vim"]
+	path = bundle/json.vim
+	url = https://github.com/helino/vim-json.git
+[submodule "bundle/javascript.vim"]
+	path = bundle/javascript.vim
+	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule "bundle/javascript2.vim"]
+	path = bundle/javascript2.vim
+	url = https://github.com/pangloss/vim-javascript.git
