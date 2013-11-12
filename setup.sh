@@ -65,6 +65,8 @@ build_arch() {
 
 update_arch() {
    git pull
+   git submodule init
+   git submodule update
    git submodule -q foreach git pull -q origin master
    run_pacman
    link
@@ -87,6 +89,8 @@ build_ubuntu() {
 
 update_ubuntu() {
    git pull
+   git submodule init
+   git submodule update
    git submodule -q foreach git pull -q origin master
    run_apt
 } # }}}
