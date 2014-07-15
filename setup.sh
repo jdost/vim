@@ -41,7 +41,7 @@ link() {
 # Install - Arch {{{
 aurGet() {
    local END_DIR=$PWD
-   cd $HOME/.aur/
+   cd $HOME/.local/aur/
    ABBR=${1:0:2}
    wget http://aur.archlinux.org/packages/$ABBR/$1/$1.tar.gz
    tar -xf "$1.tar.gz"
