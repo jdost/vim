@@ -29,3 +29,24 @@ execute 'nnoremap H H' . &l:scrolloff . 'k'
 execute 'vnoremap H H' . &l:scrolloff . 'k'
 execute 'nnoremap L L' . &l:scrolloff . 'j'
 execute 'vnoremap L L' . &l:scrolloff . 'j'
+
+command! -nargs=? -complete=file V :call s:Vsplit( '<args>' )
+command! -nargs=? -complete=file S :call s:Ssplit( '<args>' )
+
+function! s:Vsplit(files)
+   echom a:files
+   if a:files == ""
+      vsplit .
+   else
+      execut "vsplit " . a:files
+   endif
+endfunction
+
+function! s:Ssplit(files)
+   echom a:files
+   if a:files == ""
+      split .
+   else
+      execut "split " . a:files
+   endif
+endfunction
