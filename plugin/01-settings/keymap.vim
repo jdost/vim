@@ -2,6 +2,8 @@
 let mapleader = ','
 " backspace behavior
 set backspace=indent,eol,start
+" fix recording typo
+map q: :q
 
 " tab controls
 map <F4> :tabnext<cr>
@@ -30,6 +32,10 @@ vnoremap < <gv
 nnoremap ; :
 " Y yanks from cursor to end of line (like D)
 map Y y$
+" paste/yank before cursor
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
 " :w!! writes the current buffer as root
 cmap w!! w !sudo tee > /dev/null %
