@@ -33,3 +33,7 @@ map Y y$
 
 " :w!! writes the current buffer as root
 cmap w!! w !sudo tee > /dev/null %
+
+" easier ^ & $
+nnoremap L $
+nnoremap H ^
