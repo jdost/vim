@@ -1,3 +1,6 @@
+" Don't show preview in completions
+set completeopt-=preview
+
 let g:neocomplcache_enable_at_startup = 1 " auto start
 let g:neocomplcache_temporary_dir = '$XDG_CACHE_HOME/vim/neocon'
 " current text settings
