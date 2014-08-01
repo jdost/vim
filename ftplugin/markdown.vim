@@ -14,3 +14,6 @@ let g:neocomplcache_disabled_sources_list.markdown =
 
 " spell check
 setlocal spell
+set dictionary=/usr/share/dict/words
+set spellfile=~/.local/custom-dictionary.utf-8.add
+

@@ -8,7 +8,7 @@ if &t_Co >= 256
    hi Nontext ctermbg=none
 endif
 
-set cursorline
+set synmaxcol=300
 
 set encoding=utf-8
 " Line numbering
