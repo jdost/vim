@@ -11,8 +11,6 @@ map <F3> :tabprevious<cr>
 imap <F4> <Esc>:tabnext<cr>
 imap <F3> <Esc>:tabprevious<cr>
 
-" split controls are now in the vim-tmux plugin
-
 " esc remap
 imap jj <Esc>
 
@@ -30,8 +28,10 @@ vnoremap < <gv
 
 " remap ';' to be ':'
 nnoremap ; :
+
 " Y yanks from cursor to end of line (like D)
 map Y y$
+
 " paste/yank before cursor
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -43,3 +43,7 @@ cmap w!! w !sudo tee > /dev/null %
 " easier ^ & $
 nnoremap L $
 nnoremap H ^
+
+" toggle paste with F6
+nnoremap <F6> :set paste!<cr>
+inoremap <F6> <Esc>:set paste!<cr>i

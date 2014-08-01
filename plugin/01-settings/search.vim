@@ -15,3 +15,6 @@ vnoremap / /\v
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
+" n and N center when jumping
+nnoremap n nzzzv
+nnoremap N Nzzzv

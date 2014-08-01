@@ -21,5 +21,9 @@ if has ('folding')
    set foldmarker={{{,}}}
    set foldcolumn=0
    set foldtext=CustomFoldText()
+   set foldlevelstart=0
    hi Folded ctermfg=154 ctermbg=235
+
+   nnoremap <Space> za
+   vnoremap <Space> za
 endif
