@@ -79,3 +79,9 @@
 [submodule "bundle/bracketed-paste"]
 	path = bundle/bracketed-paste
 	url = git://github.com/ConradIrwin/vim-bracketed-paste.git
+[submodule "bundle/expand-region"]
+	path = bundle/expand-region
+	url = git://github.com/terryma/vim-expand-region.git
+[submodule "bundle/indexed-search"]
+	path = bundle/indexed-search
+	url = git://github.com/vim-scripts/IndexedSearch.git
