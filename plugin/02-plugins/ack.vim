@@ -1,7 +1,7 @@
 nnoremap <silent> <leader>A :set opfunc=<SID>AckMotion<CR>g@
 xnoremap <silent> <leader>A :<C-U>call <SID>AckMotion(visualmode())<CR>
 
-nnoremap <bs> :Ack! '\b<c-r><c-w>\b'<cr>
+"nnoremap <bs> :Ack! '\b<c-r><c-w>\b'<cr>
 xnoremap <silent> <bs> :<C-U>call <SID>AckMotion(visualmode())<CR>
 
 function! s:CopyMotionForType(type)
