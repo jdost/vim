@@ -26,8 +26,6 @@ All of the 3rd party plugins are installed via `git submodule init`.  Included a
 - **powerline** - A pretty looking status bar plugin, may abandon this and pull out
   the specific things I like into my own (the main development of the plugin has 
   moved to using a Python based code base)
-- **NERDcommenter** - A commenting plugin that supports a lot of languages, gives 
-  some simple actions to handle toggling comments across chunks of code
 - **cute python** - A collection of small tweaks that make Python code look prettier
 - **ctrp** - A fuzzy finder plugin that is written entirely in native vimscript, it
   has support for a lot of different use cases and configurations
@@ -36,11 +34,11 @@ All of the 3rd party plugins are installed via `git submodule init`.  Included a
   snippets are also built into the auto completion (if it weren't, I would probably 
   never use it).  The snippets all exist in `snippets/`, I cleaned out the 
   collection and have been adding in snippets I find useful as I go along.
-- **easymotion** - A helper plugin that I use to override some of the simple text
-  jumping to make longer jumps more powerful (check out the homepage of it to see 
-  what it really does)
 - **gitgutter** - This adds a gutter to the side of versioned code and notates 
   changes made since the last commit
+- **clever-f** - Makes the f keybinding smart, it will repeat an `f` action if 
+  pressed after executing one of the actions
+- **commentary** - Simpler commenting helper
 
 ## Setup
 
