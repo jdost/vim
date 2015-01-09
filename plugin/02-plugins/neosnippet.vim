@@ -3,11 +3,11 @@ let g:neosnippet#disable_runtime_snippets = {
    \ '_' : 1,
    \ }
 
-inoremap <expr><CR> pumvisible() ?
+imap <expr><CR> pumvisible() ?
    \ neosnippet#expandable() ?
-      \ neosnippet#expand_impl()
+      \ "\<Plug>(neosnippet_expand)"
       \ : neocomplcache#close_popup() . "\<CR>"
    \ : "<CR>"
-inoremap <expr><Tab> neosnippet#jumpable() ?
-   \ neosnippet#jump_impl()
+imap <expr><Tab> neosnippet#jumpable() ?
+   \ "\<Plug>(neosnippet_jump)"
    \ : pumvisible() ? "\<C-n>" : "<Tab>"
