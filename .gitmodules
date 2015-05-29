@@ -88,3 +88,21 @@
 [submodule "bundle/commentary"]
 	path = bundle/commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "bundle/vinegar"]
+	path = bundle/vinegar
+	url = git://github.com/tpope/vim-vinegar.git
+[submodule "bundle/rooter"]
+	path = bundle/rooter
+	url = git://github.com/airblade/vim-rooter.git
+[submodule "bundle/git.vim"]
+	path = bundle/git.vim
+	url = git://github.com/tpope/vim-git.git
+[submodule "bundle/python.vim"]
+	path = bundle/python.vim
+	url = git://github.com/hdima/python-syntax.git
+[submodule "bundle/tmux-focus-events"]
+	path = bundle/tmux-focus-events
+	url = git://github.com/tmux-plugins/vim-tmux-focus-events.git
+[submodule "bundle/scratch"]
+	path = bundle/scratch
+	url = git://github.com/mtth/scratch.vim.git

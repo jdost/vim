@@ -22,7 +22,17 @@ set fillchars=vert:┃ "║
 set ttyfast
 set lazyredraw
 
+set cursorline
 set colorcolumn=85
+" netrw
+let g:netrw_list_hide= ".git,*\.pyc,*\.png"
+
+" cursor changes based on mode
+if &term == 'xterm-256color' || &term == 'rxvt-unicode-256color' || &term == 'screen-256color' || &term == 'screen-256color-it'
+   let &t_SI = "\<Esc>[5 q"
+   let &t_EI = "\<Esc>[1 q"
+   " urxvt has not implemented the bar cursor until 9.21, if that's the case, use an underbar: let &t_SI = "\<Esc>[3 q"
+endif
 
 set scrolloff=5
 execute 'nnoremap H H' . &l:scrolloff . 'k'

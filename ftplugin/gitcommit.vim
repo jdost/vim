@@ -1,2 +1,3 @@
 autocmd! BufReadPost
-setlocal textwidth=79
+
+setlocal formatoptions+=tl

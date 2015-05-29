@@ -17,3 +17,7 @@ setlocal spell
 set dictionary=/usr/share/dict/words
 set spellfile=~/.local/custom-dictionary.utf-8.add
 
+" codeblocks
+let g:markdown_fenced_languages = ['python', 'javascript', 'js=javascript',
+         \ 'json=javascript', 'ruby', 'css', 'less', 'sass', 'xml', 'html',
+         \ 'hs=haskell', 'haskell', 'zsh', 'sh', 'bash=sh', 'vim' ]

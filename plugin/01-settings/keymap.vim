@@ -47,3 +47,10 @@ nnoremap H ^
 " toggle paste with F6
 nnoremap <F6> :set paste!<cr>
 inoremap <F6> <Esc>:set paste!<cr>i
+
+" Ctrl+J inserts line-break
+nnoremap <NL> i<CR><ESC>
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
