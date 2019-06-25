@@ -1,3 +1,7 @@
+# vim-plug files
+bundle/*
+autoload/plug.vim
+# local overrides
 spell/*
 local.vim
 
