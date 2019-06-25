@@ -12,9 +12,8 @@ let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 if $TERM =~ "-256color"
    set t_Co=256
 endif " }}}
-" pathogen plugin, sets up bundles
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
+" plugins are managed by vim-plugin in the plugin file
+runtime plugins.vim
 
 filetype plugin indent on
 " clear autocmds, handles on reloading this {{{
