@@ -12,6 +12,7 @@ let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 if $TERM =~ "-256color"
    set t_Co=256
 endif " }}}
+
 " plugins are managed by vim-plugin in the plugin file
 runtime plugins.vim
 

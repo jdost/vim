@@ -1,6 +1,5 @@
 " if 256 colors use a colorscheme
 if &t_Co >= 256
-   "colorscheme molokai
    colorscheme badwolf
    syntax on
 

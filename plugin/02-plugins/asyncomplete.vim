@@ -1,25 +1,56 @@
-silent! if has_key(g:plugs, 'asyncomplete.vim')
+function! Smart_CR()
+   if pumvisible()
+      return asyncomplete#menu_selected() ? asyncomplete#close_popup() : asyncomplete#cancel_popup() . "\<CR>"
+   else
+      return "\<CR>"
+   endif
+endfunction
+
+function! ToggleAsyncomplete()
+   if b:asyncomplete_enable == 1
+      call asyncomplete#disable_for_buffer()
+   else
+      call asyncomplete#enable_for_buffer()
+   endif
+endfunction
+
+if has_key(g:plugs, 'asyncomplete.vim')
+   let g:asyncomplete_default_refresh_pattern = '\(\k\+$\|\.$\)'
+   let g:asyncomplete_smart_completion = 1
+   let g:asyncomplete_auto_popup = 1
+   let g:asyncomplete_remove_duplicates = 1
+
    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+   inoremap <expr> <CR>    Smart_CR()
 
    autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+   if has_key(g:plugs, 'quickmenu.vim')
+      call g:quickmenu#current(0)
+      call g:quickmenu#append('Toggle autocomplete', 'call ToggleAsyncomplete', '', '', 1, '')
+   endif
 endif
 
 " asyncomplete-buffer
-silent! if has_key(g:plugs, 'asyncomplete-buffer.vim')
-   call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-      \ 'name': 'buffer',
-      \ 'whitelist': ['*'],
-      \ 'blacklist': ['go'],
-      \ 'completor': function('asyncomplete#sources#buffer#completor'),
-      \ 'config': {
-      \    'max_buffer_size': 5000000,
-      \  },
-      \ }))
+if has_key(g:plugs, 'asyncomplete-buffer.vim') && has_key(g:plugs, 'asyncomplete.vim')
+   let g:asyncomplete_buffer_clear_cache = 1
+
+   augroup asyncomplete_buffer
+      autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+         \ 'name': 'buffer',
+         \ 'whitelist': ['*'],
+         \ 'blacklist': ['go'],
+         \ 'completor': function('asyncomplete#sources#buffer#completor'),
+         \ 'config': {
+         \    'max_buffer_size': 5000000,
+         \  },
+         \ }))
+   augroup END
 endif
 
 " tmux-complete
-silent! if has_key(g:plugs, 'tmux-complete.vim')
+if has_key(g:plugs, 'tmux-complete.vim') && has_key(g:plugs, 'asyncomplete.vim')
    let g:tmuxcomplete#asyncomplete_source_options = {
                \ 'name':      'tmuxcomplete',
                \ 'whitelist': ['*'],
@@ -32,4 +63,16 @@ silent! if has_key(g:plugs, 'tmux-complete.vim')
                \     'truncate':        0
                \     }
                \ }
+endif
+
+" asyncomplete-file
+if has_key(g:plugs, 'asyncomplete-file.vim') && has_key(g:plugs, 'asyncomplete.vim')
+   augroup asyncomplete_file
+      autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+         \ 'name': 'file',
+         \ 'whitelist': ['*'],
+         \ 'priority': 10,
+         \ 'completor': function('asyncomplete#sources#file#completor'),
+         \ }))
+   augroup END
 endif
