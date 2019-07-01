@@ -22,7 +22,7 @@ endif
 "Plug 'mtth/scratch.vim'
 Plug 'airblade/vim-rooter'  " This updates the CWD to be the top level of a git repo
 Plug 'tpope/vim-vinegar'  " Updates and cleans up the netrw capabilities
-Plug 'vim-scripts/IndexedSearch'
+Plug 'google/vim-searchindex'
 "Plug 'tpope/vim-surround'
 "Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'roxma/vim-paste-easy'  " Smart pasting detection
@@ -33,14 +33,26 @@ Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 " }}}
 
 " Editting {{{
+"Plug 'Shougo/neco-syntax'
 " asyncomplete+friends {{{
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'prabirshrestha/asyncomplete-file.vim'
+"Plug 'prabirshrestha/asyncomplete-necosyntax.vim'
+" }}}
+" coc {{{
+"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+"Plug 'tjdevries/coc-zsh'
+" }}}
+" ncm2 {{{
+"Plug 'roxma/nvim-yarp' | Plug 'ncm2/ncm2'
+"Plug 'ncm2/ncm2-syntax'
+"Plug 'ncm2/ncm2-vim-lsp'
 " }}}
 
+"Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 "Plug 'scrooloose/syntastic'
 "Plug 'Shougo/neosnippet'
@@ -70,7 +82,7 @@ Plug 'itchyny/lightline.vim'
 " Tmux {{{
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux', exists('$TMUX') ? {} : { 'on': [] }
-"Plug 'tmux-plugins/vim-tmux-focus-events', exists('$TMUX') ? {} : { 'on': [] }
+Plug 'tmux-plugins/vim-tmux-focus-events', exists('$TMUX') ? {} : { 'on': [] }
 Plug 'wellle/tmux-complete.vim', exists('$TMUX') ? {} : { 'on': [] }
 " }}}
 
@@ -78,30 +90,30 @@ Plug 'wellle/tmux-complete.vim', exists('$TMUX') ? {} : { 'on': [] }
 Plug 'sheerun/vim-polyglot'
 " --- Python
 Plug 'ehamberg/vim-cute-python', { 'for': 'python' }
-"Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'hdima/python-syntax', { 'for': 'python' }
 " --- GoLang
-"Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': 'go' }
 " --- Rust
-"Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " --- Elxir
-"Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 " --- Markdown
 Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 " --- Web Frontend stuff
-"Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-"Plug 'groenewege/vim-less', { 'for': 'less' }
-"Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-"Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 " --- Configs and such
-"Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
-"Plug 'smancill/conky-syntax.vim', { 'for': 'conky' }
-"Plug 'puppetlabs/puppet-syntax-vim', { 'for': 'puppet' }
-"Plug 'helino/vim-json', { 'for': 'json' }
-"Plug 'elzr/vim-json', { 'for': 'json' }
-"Plug 'lervag/vimtex', { 'for': ['tex', 'bib'] }
-"Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile', 'docker-compose'] }
+Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
+Plug 'smancill/conky-syntax.vim', { 'for': 'conky' }
+Plug 'puppetlabs/puppet-syntax-vim', { 'for': 'puppet' }
+Plug 'helino/vim-json', { 'for': 'json' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'lervag/vimtex', { 'for': ['tex', 'bib'] }
+Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile', 'docker-compose'] }
 " }}}
 call plug#end()

@@ -7,4 +7,3 @@ augroup cline
    au WinLeave,InsertEnter * set nocursorline
    au WinEnter,InsertLeave * set cursorline
 augroup END
-

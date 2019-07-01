@@ -1,4 +1,4 @@
-function! Smart_CR()
+function! s:smart_cr()
    if pumvisible()
       return asyncomplete#menu_selected() ? asyncomplete#close_popup() : asyncomplete#cancel_popup() . "\<CR>"
    else
@@ -22,7 +22,7 @@ if has_key(g:plugs, 'asyncomplete.vim')
 
    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-   inoremap <expr> <CR>    Smart_CR()
+   inoremap <expr> <CR>    <SID>smart_cr()
 
    autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 

@@ -18,3 +18,8 @@ vnoremap <tab> %
 " n and N center when jumping
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
+" Use `ripgrep` for grep if installed
+if executable('rg')
+   set grepprg=rg\ --color=never
+endif

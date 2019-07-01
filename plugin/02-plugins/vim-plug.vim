@@ -24,7 +24,7 @@ function! s:plug_gx()
     call netrw#BrowseX(url, 0)
 endfunction
 augroup vim_plug_open
-    autocmd! FileType vim-plug nmap <buffer> o :call <sid>plug_gx()<CR>
+    autocmd! FileType vim-plug nmap <buffer> o :call <SID>plug_gx()<CR>
 augroup END
 " Try and install missing plugins on startup
 augroup vim_plug_auto_install
@@ -39,11 +39,11 @@ function! s:plug_doc()
     let name = matchstr(getline('.'), '^- \zs\S\+\ze:')
     if has_key(g:plugs, name)
         for doc in split(globpath(g:plugs[name].dir, 'doc/*.txt'), '\n')
-            execute 'tabe' doc
+            execute 'silent e' doc
         endfor
     endif
 endfunction
 augroup vim_plug_doc
     autocmd!
-    autocmd FileType vim-plug nnoremap <buffer> <silent> H :call <sid>plug_doc()<cr>
+    autocmd FileType vim-plug nmap <buffer> H :call <SID>plug_doc()<cr>
 augroup END
