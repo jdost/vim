@@ -5,14 +5,68 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 "let g:ale_completion_enabled = 1
-"set omnifunc=ale#completion#OmniFunc
+set omnifunc=ale#completion#OmniFunc
 
 " Use a quickfix rather than loclist
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
 
 "keybindings
 silent! if has_key(g:plugs, 'ale')
    nmap <silent> <C-k> <Plug>(ale_previous_wrap)
    nmap <silent> <C-j> <Plug>(ale_next_wrap)
+endif
+
+function! s:is_linted() abort
+   return get(g: 'ale_enabled', 0) == 1
+      \ && getbufvar(bufnr(''), 'ale_linted', 0) > 0
+      \ && ale#engine#IsCheckingBuffer(bufnr('')) == 0
+endfunction
+
+function! ale#llWarnings() abort
+   if !s:is_linted()
+      return ''
+   endif
+   let l:counts = ale#statusline#Count(bufnr(''))
+   let l:warning_count = (l:counts.total - l:counts.error - l:counts.style_error)
+   return  l:warning_count == 0 ? '' : printf('W %d', warning_count)
+endfunction
+
+function! ale#llErrors() abort
+   if !s:is_linted()
+      return ''
+   endif
+   let l:counts = ale#statusline#Count(bufnr(''))
+   let l:error_count = (l:counts.error + l:counts.style_error)
+   return l:error_count == 0 ? '' : printf('E %d', error_count)
+endfunction
+
+function! ale#llOk() abort
+   if !s:is_linted()
+      return ''
+   endif
+   return ale#statusline#Count(bufnr('')).total == 0 ? 'OK' : ''
+endfunction
+
+function! ale#llChecking() abort
+   return ale#engine#IsCheckingBuffer(bufnr('')) ? 'Linting...' : ''
+endfunction
+
+silent! if has_key(g:plugs, 'ale') && has_key(g:plugs, 'lightline.vim')
+   let g:lightline.component_expand.linter_status = 'ale#llChecking'
+   let g:lightline.component_type.linter_status = 'middle'
+   let g:lightline.component_expand.linter_ok = 'ale#llOk'
+   let g:lightline.component_type.linter_ok = 'middle'
+   let g:lightline.component_expand.linter_warning = 'ale#llWarning'
+   let g:lightline.component_type.linter_warning = 'warning'
+   let g:lightline.component_expand.linter_error = 'ale#llError'
+   let g:lightline.component_type.linter_error = 'error'
+
+   augroup ale_lightline
+      autocmd!
+      autocmd User ALEJobStarted call lightline#update()
+      autocmd User ALELintPost call lightline#update()
+      autocmd User ALEFixPost call lightline#update()
+   augroup END
 endif

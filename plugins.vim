@@ -52,7 +52,7 @@ Plug 'prabirshrestha/asyncomplete-necosyntax.vim'
 "Plug 'ncm2/ncm2-vim-lsp'
 " }}}
 
-"Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 "Plug 'scrooloose/syntastic'
 "Plug 'Shougo/neosnippet'
@@ -61,6 +61,10 @@ Plug 'editorconfig/editorconfig-vim', empty(glob('./.editorconfig')) ? { 'on': [
 Plug 'machakann/vim-highlightedyank'  " highlights yanked blocks
 " }}}
 
+" Sessions {{{
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
+" }}}
 " VCS {{{
 Plug 'tpope/vim-git'
 Plug 'airblade/vim-gitgutter'
@@ -77,6 +81,15 @@ Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'bagrat/vim-buffet'
 Plug 'CharlesGueunet/quickmenu.vim'
 Plug 'itchyny/lightline.vim'
+let g:lightline = {
+   \  'active': {},
+   \  'component': {},
+   \  'component_visible_condition': {},
+   \  'component_function': {},
+   \  'component_function_visible_condition': {},
+   \  'component_expand': {},
+   \  'component_type': {},
+   \ }
 " }}}
 
 " Tmux {{{

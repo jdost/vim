@@ -1,5 +1,5 @@
 " Fly Mode
-let g:AutoPairsFlyMode = 1
+let g:AutoPairsFlyMode = 0
 " Default auto-pairing sets
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
 
