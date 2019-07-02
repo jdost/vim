@@ -76,3 +76,14 @@ if has_key(g:plugs, 'asyncomplete-file.vim') && has_key(g:plugs, 'asyncomplete.v
          \ }))
    augroup END
 endif
+
+" asyncomplete-necosyntax
+if has_key(g:plugs, 'asyncomplete-necosyntax.vim') && has_key(g:plugs, 'asyncomplete.vim')
+   augroup asyncomplete_necosyntax
+      autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necosyntax#get_source_options({
+         \ 'name': 'necosyntax',
+         \ 'whitelist': ['*'],
+         \ 'completor': function('asyncomplete#sources#necosyntax#completor'),
+         \ }))
+   augroup END
+endif

@@ -1,6 +1,12 @@
 " if 256 colors use a colorscheme
 if &t_Co >= 256
-   colorscheme badwolf
+
+   if has_key(g:plugs, 'badwolf')
+      colorscheme badwolf
+   elseif has_key(g:plugs, 'seoul256.vim')
+      let g:seoul256_background = 235
+      colorscheme seoul256
+   endif
    syntax on
 
    hi Normal ctermbg=none

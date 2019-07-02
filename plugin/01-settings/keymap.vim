@@ -2,8 +2,6 @@
 let mapleader = ','
 " backspace behavior
 set backspace=indent,eol,start
-" fix recording typo
-map q: :q
 
 " tab controls
 map <F4> :tabnext<cr>

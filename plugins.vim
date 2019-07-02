@@ -33,14 +33,14 @@ Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 " }}}
 
 " Editting {{{
-"Plug 'Shougo/neco-syntax'
+Plug 'Shougo/neco-syntax'
 " asyncomplete+friends {{{
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'prabirshrestha/asyncomplete-file.vim'
-"Plug 'prabirshrestha/asyncomplete-necosyntax.vim'
+Plug 'prabirshrestha/asyncomplete-necosyntax.vim'
 " }}}
 " coc {{{
 "Plug 'neoclide/coc.nvim', { 'branch': 'release' }
