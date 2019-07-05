@@ -6,7 +6,7 @@ if exists('$TMUX')
    let g:prosession_tmux_title = 1
 endif
 " Whether to load/start a prosession on start
-let g:prosession_on_startup = 0  " Start it via the rooter hook
+let g:prosession_on_startup = 1
 
 function! s:HelpVim_prosession()
    echo ':Prosession {dir}             switch to the session of {dir}, if doesnt exist, creat a new session'
@@ -24,7 +24,5 @@ if has_key(g:plugs, 'vim-prosession')
 
    augroup prosession_start
       autocmd!
-      autocmd User RooterChDir :Prosession 'getcwd()'
-      autocmd User RooterChDir :Obsess
    augroup END
 endif
