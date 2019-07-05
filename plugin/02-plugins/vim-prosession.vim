@@ -1,5 +1,5 @@
 " Directory to store sessions
-let g:prosession_dir = '$XDG_CACHE_HOME/vim/session/'
+let g:prosession_dir = $XDG_CACHE_HOME. '/vim/session/'
 
 if exists('$TMUX')
    " Let prosession set tmux pane name
@@ -23,6 +23,8 @@ if has_key(g:plugs, 'vim-prosession')
    command! -nargs=? ProsessionList echo prosession#ListSessions(<q-args>)
 
    augroup prosession_start
-      autocmd User RooterChDir Prosession
+      autocmd!
+      autocmd User RooterChDir :Prosession 'getcwd()'
+      autocmd User RooterChDir :Obsess
    augroup END
 endif
