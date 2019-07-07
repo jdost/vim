@@ -53,6 +53,9 @@ function! ale#llChecking() abort
    return ale#engine#IsCheckingBuffer(bufnr('')) ? 'Linting...' : ''
 endfunction
 
+" We don't have airline, lightline is used instead
+let g:airline#extensions#ale#enabled = 0
+
 silent! if has_key(g:plugs, 'ale') && has_key(g:plugs, 'lightline.vim')
    let g:lightline.component_expand.linter_status = 'ale#llChecking'
    let g:lightline.component_type.linter_status = 'middle'
