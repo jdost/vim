@@ -52,7 +52,7 @@ Plug 'prabirshrestha/asyncomplete-necosyntax.vim'
 "Plug 'ncm2/ncm2-vim-lsp'
 " }}}
 
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 "Plug 'scrooloose/syntastic'
 "Plug 'Shougo/neosnippet'
