@@ -1,7 +1,9 @@
+" The rest are defined in the ftplugin files
 let g:ale_fixers = {
    \  '*': ['remove_trailing_lines', 'trim_whitespace'],
    \}
 
+" Run the ale fixers on save
 let g:ale_fix_on_save = 1
 
 "let g:ale_completion_enabled = 1
@@ -16,7 +18,14 @@ let g:ale_open_list = 1
 silent! if has_key(g:plugs, 'ale')
    nmap <silent> <C-k> <Plug>(ale_previous_wrap)
    nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+   if has_key(g:plugs, 'quickmenu.vim')
+      call g:quickmenu#current(0)
+      call g:quickmenu#append('Toggle All Linting', 'AleToggle', 'Toggle Linting Globally', '', 0, '')
+      call g:quickmenu#append('Toggle Local Linting', 'AleToggleBuffer', 'Toggle Linting Locally', '', 0, '')
+   endif
 endif
+
 
 function! s:is_linted() abort
    return get(g: 'ale_enabled', 0) == 1

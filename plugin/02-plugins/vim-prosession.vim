@@ -8,7 +8,7 @@ endif
 " Whether to load/start a prosession on start
 let g:prosession_on_startup = 1
 
-function! s:HelpVim_prosession()
+function! HelpVim_prosession()
    echo ':Prosession {dir}             switch to the session of {dir}, if doesnt exist, creat a new session'
    echo ':ProsessionDelete [{dir}]     if no {dir} specified, delete current active session'
    echo ':ProsessionList {filter}      if no {filter} specified, list all session'

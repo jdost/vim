@@ -1,5 +1,6 @@
-function! s:HelpVim_fugitive()
-   echo ':Prosession {dir}             switch to the session of {dir}, if doesnt exist, creat a new session'
+function! HelpVim_fugitive()
+   echo ':Gblame           Opens the blame list for each line on the left'
+   echo ':Glog             Opens a navigatable log for commits on the current file'
 endfunction
 
 if has_key(g:plugs, 'vim-fugitive')
