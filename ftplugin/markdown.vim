@@ -1,8 +1,9 @@
 setlocal wrap
-setlocal shiftwidth=4
-setlocal tabstop=4
+setlocal shiftwidth=2
+setlocal tabstop=2
 setlocal nolist
 setlocal linebreak
+setlocal foldmarker={{{,}}}
 
 let g:TrimOnSave = 0
 
@@ -32,3 +33,15 @@ let g:vim_markdown_fenced_languages = ['python', 'javascript', 'js=javascript',
 let g:vim_markdown_no_default_key_mappings = 1
 set conceallevel=2
 let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_folding_disabled = 1
+
+" display stuff
+silent! if has_key(g:plugs, 'goyo.vim')
+   :Goyo
+endif
+
+silent! if has_key(g:plugs, 'vim-pencil')
+   :HardPencil
+   let g:pencil#autoformat = 0
+endif

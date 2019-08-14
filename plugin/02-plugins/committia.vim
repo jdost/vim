@@ -14,4 +14,9 @@ function! g:committia_hooks.edit_open(info)
    imap <buffer> <PageUp>     <Plug>(committia-scroll-diff-up-half)
    imap <buffer> <S-PageDown> <Plug>(committia-scroll-diff-down-page)
    imap <buffer> <S-PageUp>   <Plug>(committia-scroll-diff-up-page)
+
+   nmap <buffer> <PageDown>   <Plug>(committia-scroll-diff-down-half)
+   nmap <buffer> <PageUp>     <Plug>(committia-scroll-diff-up-half)
+   nmap <buffer> <S-PageDown> <Plug>(committia-scroll-diff-down-page)
+   nmap <buffer> <S-PageUp>   <Plug>(committia-scroll-diff-up-page)
 endfunction

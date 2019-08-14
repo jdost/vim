@@ -22,9 +22,9 @@ endif
 "Plug 'mtth/scratch.vim'
 Plug 'airblade/vim-rooter'  " This updates the CWD to be the top level of a git repo
 Plug 'tpope/vim-vinegar'  " Updates and cleans up the netrw capabilities
-Plug 'google/vim-searchindex'
-"Plug 'haya14busa/incsearch.vim'
-"Plug 'haya14busa/incsearch-fuzzy.vim'
+"Plug 'google/vim-searchindex'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 "Plug 'tpope/vim-surround'
 "Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'roxma/vim-paste-easy'  " Smart pasting detection
@@ -35,13 +35,14 @@ Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 " }}}
 
 " Editting {{{
-Plug 'Shougo/neco-syntax'
 " asyncomplete+friends {{{
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'prabirshrestha/asyncomplete-file.vim'
+Plug 'Shougo/neco-syntax'
 Plug 'prabirshrestha/asyncomplete-necosyntax.vim'
 " }}}
 " coc {{{
@@ -65,9 +66,11 @@ Plug 'machakann/vim-highlightedyank'  " highlights yanked blocks
 " }}}
 
 " Sessions {{{
-Plug 'tpope/vim-obsession'
-Plug 'dhruvasagar/vim-prosession'
+"These are weird, need to decide if they are worth trying...
+"Plug 'tpope/vim-obsession'
+"Plug 'dhruvasagar/vim-prosession'
 " }}}
+
 " VCS {{{
 Plug 'tpope/vim-git'
 Plug 'airblade/vim-gitgutter'
@@ -84,6 +87,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'bagrat/vim-buffet'
 Plug 'CharlesGueunet/quickmenu.vim'
 Plug 'itchyny/lightline.vim'
+" Instantiating this now so it can be populated via plugin detections
 let g:lightline = {
    \  'active': {},
    \  'component': {},
@@ -123,6 +127,7 @@ Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'jparise/vim-graphql', { 'for': ['gql', 'graphql'] }
 " --- Configs and such
 Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
 Plug 'smancill/conky-syntax.vim', { 'for': 'conky' }

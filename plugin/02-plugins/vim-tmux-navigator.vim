@@ -12,4 +12,13 @@ if has_key(g:plugs, 'vim-tmux-navigator')
    inoremap <silent> <C-K> <Esc>:TmuxNavigateUp<cr>
    inoremap <silent> <C-H> <Esc>:TmuxNavigateLeft<cr>
    inoremap <silent> <C-L> <Esc>:TmuxNavigateRight<cr>
+else  " Fall back to same behavior but just in vim
+   nnoremap <silent> <C-J> <C-W><C-J>
+   nnoremap <silent> <C-K> <C-W><C-K>
+   nnoremap <silent> <C-H> <C-W><C-H>
+   nnoremap <silent> <C-L> <C-W><C-L>
+   inoremap <silent> <C-J> <Esc><C-W><C-J>
+   inoremap <silent> <C-K> <Esc><C-W><C-K>
+   inoremap <silent> <C-H> <Esc><C-W><C-H>
+   inoremap <silent> <C-L> <Esc><C-W><C-L>
 endif

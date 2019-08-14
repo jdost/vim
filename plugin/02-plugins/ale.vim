@@ -3,6 +3,7 @@ let g:ale_fixers = {
    \  '*': ['remove_trailing_lines', 'trim_whitespace'],
    \}
 
+let g:ale_lint_delay = 500
 " Run the ale fixers on save
 let g:ale_fix_on_save = 1
 
@@ -13,6 +14,14 @@ set omnifunc=ale#completion#OmniFunc
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
+
+" Cached failed linters/fixers
+let g:ale_cache_executable_check_failures = 1
+" Run tasks with a low priority
+let g:ale_command_wrapper = 'nice -n5 %*'
+" Don't care about `ALEInfo`
+let g:ale_history_enabled = 0
+let g:ale_history_log_output = 0
 
 "keybindings
 silent! if has_key(g:plugs, 'ale')
@@ -26,7 +35,7 @@ silent! if has_key(g:plugs, 'ale')
    endif
 endif
 
-
+" Lightline stuff
 function! s:is_linted() abort
    return get(g: 'ale_enabled', 0) == 1
       \ && getbufvar(bufnr(''), 'ale_linted', 0) > 0

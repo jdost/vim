@@ -29,6 +29,7 @@ set formatoptions=cn
 " Filetype setup
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.go set filetype=go
+au BufNewFile,BufRead *.graphql,*.graphqls,*.gql set filetype=graphql
 
 if !has('conceal')
    finish

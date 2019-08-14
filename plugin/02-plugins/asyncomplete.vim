@@ -28,7 +28,7 @@ if has_key(g:plugs, 'asyncomplete.vim')
 
    if has_key(g:plugs, 'quickmenu.vim')
       call g:quickmenu#current(0)
-      call g:quickmenu#append('Toggle autocomplete', 'call ToggleAsyncomplete', '', '', 1, '')
+      call g:quickmenu#append('Toggle autocomplete', 'call ToggleAsyncomplete()', '', '', 1, '')
    endif
 endif
 
@@ -37,13 +37,14 @@ if has_key(g:plugs, 'asyncomplete-buffer.vim') && has_key(g:plugs, 'asyncomplete
    let g:asyncomplete_buffer_clear_cache = 1
 
    augroup asyncomplete_buffer
+      autocmd!
       autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
          \ 'name': 'buffer',
          \ 'whitelist': ['*'],
-         \ 'blacklist': ['go'],
+         \ 'blacklist': ['go', 'markdown', 'md'],
          \ 'completor': function('asyncomplete#sources#buffer#completor'),
          \ 'config': {
-         \    'max_buffer_size': 5000000,
+         \    'max_buffer_size': 50000,
          \  },
          \ }))
    augroup END
@@ -68,9 +69,11 @@ endif
 " asyncomplete-file
 if has_key(g:plugs, 'asyncomplete-file.vim') && has_key(g:plugs, 'asyncomplete.vim')
    augroup asyncomplete_file
+      autocmd!
       autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
          \ 'name': 'file',
          \ 'whitelist': ['*'],
+         \ 'blacklist': ['markdown', 'md'],
          \ 'priority': 10,
          \ 'completor': function('asyncomplete#sources#file#completor'),
          \ }))
@@ -80,6 +83,7 @@ endif
 " asyncomplete-necosyntax
 if has_key(g:plugs, 'asyncomplete-necosyntax.vim') && has_key(g:plugs, 'asyncomplete.vim')
    augroup asyncomplete_necosyntax
+      autocmd!
       autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necosyntax#get_source_options({
          \ 'name': 'necosyntax',
          \ 'whitelist': ['*'],
